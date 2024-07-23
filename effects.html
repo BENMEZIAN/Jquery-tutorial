@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Jquery effects</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: lightgray;
+            width: 500px;
+        }
+        
+        .flex-button-hide-show,
+        .flex-button-fadeInOut {
+            display: flex;
+            gap: 10px;
+            margin: 10px;
+        }
+        
+        img {
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        
+        input {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        
+        .button-hide-show {
+            background-color: green;
+        }
+        
+        .button-fade {
+            background-color: red;
+        }
+        
+        #title,
+        #content {
+            background-color: grey;
+            border: 1px solid black;
+            text-align: center;
+            margin: 5px;
+            padding: 10px;
+        }
+        
+        #content {
+            height: 300px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <center>
+        <h1>Learn complete jQuery: jQuery Effects</h1>
+    </center>
+
+    <div class="container">
+        <div class="flex-button-hide-show">
+            <input type="button" class="button-hide-show" value="Hide" id="hide" name="">
+            <input type="button" class="button-hide-show" value="Show" id="show" name="">
+            <input type="button" class="button-hide-show" value="Toggle" id="toggle" name="">
+        </div>
+
+        <div class="flex-button-fadeInOut">
+            <input type="button" class="button-fade" value="FadeOut" id="fhide" name="">
+            <input type="button" class="button-fade" value="FadeIn" id="fshow" name="">
+            <input type="button" class="button-fade" value="FadeToggle" id="ftoggle" name="">
+        </div>
+
+        <img src="jquery.png" alt="">
+    </div>
+
+    <div>
+        <div id="title">Click me</div>
+        <div id="content">This is a simle content</div>
+    </div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#hide").click(function() {
+                $("img").hide(1500, function() {
+                    //alert("Image is hidden");
+                });
+            });
+
+            $("#show").click(function() {
+                $("img").show(1500, function() {
+                    //alert("Image is shown");
+                });
+            });
+
+            $("#toggle").click(function() {
+                $("img").toggle(1500, function() {
+                    // alert("Image is toggled");
+                });
+            });
+
+
+            $("#fhide").click(function() {
+                $("img").fadeOut(1500, function() {
+                    //alert("Image fadeOut");
+                });
+            });
+
+            $("#fshow").click(function() {
+                $("img").fadeIn(1500, function() {
+                    //alert("Image fadeIn");
+                });
+            });
+
+            $("#ftoggle").click(function() {
+                $("img").fadeToggle(1500, function() {
+                    //alert("Image fadeToggle");
+                });
+            });
+
+            $("#title").click(function() {
+                //$("#content").slideUp(); sliding to the Up
+                //$("#content").slideDown(); sliding to the down
+                $("#content").slideToggle();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

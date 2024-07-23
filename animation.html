@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Jquery animation</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 0 auto;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        img {
+            position: absolute;
+            border-radius: 5px;
+            height: 100px;
+            width: 100px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <center>
+        <h1>Learn complete jQuery: jQuery Animation</h1>
+    </center>
+
+    <div>
+        <img src="jquery.png" alt="">
+        <button>Start Animation</button>
+
+        <input type="button" value="start moving" id="start" name="">
+        <input type="button" value="stop moving" id="stop" name="">
+        <input type="button" value="go back" id="go_back" name="">
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("button").click(function() {
+                $("img").animate({ // i can manage either one or multiple properties
+                    left: '250px',
+                    opacity: '0.5',
+                    height: '150px',
+                    width: '150px'
+                }, {
+                    duration: 2000,
+                    start: function() {
+                        console.log("starting animation");
+                    },
+                    complete: function() {
+                        console.log("animation completed");
+                    }
+                });
+            });
+
+            let isMoving = false; // Track the state of the animation
+
+            // Start Moving Right
+            $("#start").click(function() {
+                if (!isMoving) {
+                    isMoving = true;
+                    $("img").animate({
+                        left: '800px'
+                    }, {
+                        duration: 2000,
+                        complete: function() {
+                            isMoving = false; // Reset the state when the animation completes
+                        }
+                    });
+                }
+            });
+
+            // Stop the Animation
+            $("#stop").click(function() {
+                $("img").stop(); // Stop the current animation and clear the queue
+                isMoving = false; // Reset the state to allow restarting the animation
+            });
+
+            // Go Back to the Left
+            $("#go_back").click(function() {
+                if (!isMoving) {
+                    isMoving = true;
+                    $("img").animate({
+                        left: '0px'
+                    }, {
+                        duration: 2000,
+                        complete: function() {
+                            isMoving = false; // Reset the state when the animation completes
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

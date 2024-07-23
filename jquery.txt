@@ -1,0 +1,11 @@
+Learn Complete jQuery x
+-Introduction x
+-Dowload jQuery, CDN, Syntax x
+-Selectors x
+-Effects x
+-CSS x
+-Events x
+-DOM Manipulation x
+-Ajax x
+
+Finished

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Jquery events</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <center>
+        <h1>Learn complete jQuery: jQuery Events</h1>
+    </center>
+
+    <div>
+        <!-- <img src="jquery.png" alt="">
+        <button>Start Animation</button> -->
+
+        <input type="button" value="click me" id="start" name="">
+
+        <p>HELLO world</p>
+
+        <h1>Heading tag 1</h1>
+
+        <input type="text" placeholder="Your name" id="nom" name="" autocomplete="off">
+
+        <form>
+            <input type="text" placeholder="Your name" id="num" name="" autocomplete="off">
+            <input type="submit">
+        </form>
+
+    </div>
+
+
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //$("#start").click(function() { // on click event
+            //  alert("Clicked button");
+            //});
+
+            //$("#start").dblclick(function() { // on double-click event
+            //  alert("Clicked button twice");
+            //});
+
+            $("h1").click(function() { // on click event
+                alert(this.innerHTML); // access to h1 tag text (content)
+                alert($(this).text()); // access to h1 tag text (content)
+                $(this).text("This is a modified text of heading 1"); // change text content
+            });
+
+            $("p").on("mouseover", function() {
+                $(this).css("color", "blue");
+            });
+
+            $("p").on({
+                mouseover: function() {
+                    $(this).css({
+                        "color": "blue",
+                        "cursor": "pointer"
+                    });
+                },
+                mouseout: function() {
+                    $(this).css("color", "black");
+                }
+            });
+
+            $("#nom").on({
+                keypress: function() {
+                    console.log("Value is : " + this.value);
+                },
+                keyup: function() {
+                    console.log("key up");
+                },
+
+                keydown: function() {
+                    console.log("key down");
+                }
+            });
+
+            $("#nom").change(function() {
+                console.log(this.value); // it prints when the message is changed else no print
+            });
+
+            $("form").submit(function() {
+                console.log("form submitted");
+                return false;
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

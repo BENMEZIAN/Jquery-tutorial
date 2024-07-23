@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Jquery css</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 0 auto;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        img {
+            position: relative;
+            border-radius: 5px;
+            height: 100px;
+            width: 100px;
+            margin-top: 50px;
+        }
+        
+        .parag {
+            font-family: "verdana";
+            font-style: initial;
+            font-size: 20px;
+            color: gold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <center>
+        <h1>Learn complete jQuery: jQuery CSS</h1>
+    </center>
+
+    <div>
+        <img src="jquery.png" alt="">
+        <button>Start Animation</button>
+
+        <input type="button" value="click me" id="start" name="">
+
+        <input type="text" placeholder="Your name" id="nom" name="" autocomplete="off">
+    </div>
+
+    <div>
+        <p>This is a simple paragraph</p>
+
+        <h1 class="parag">This is a heading tag H1</h1>
+
+        <input type="button" value="add/remove class" id="alternate">
+
+        <h2>This heading tag H2</h2>
+    </div>
+
+
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("input[type=text]").click(function() {
+                $(this).css("width", "500px"); // change css property 
+            });
+
+            $("#start").click(function() {
+                $(this).css("background-color", "red"); // change css property 
+            });
+
+            $("button").hover(
+                function() {
+                    $(this).css({ // change multiple css properties 
+                        "background-color": "green",
+                        "color": "white",
+                        "font-family": "verdana",
+                        "padding": "10px",
+                        "border-radius": "5px"
+                    });
+                },
+                function() {
+                    $(this).css({
+                        "background-color": "",
+                        "color": "",
+                        "font-family": "",
+                        "padding": "",
+                        "border-radius": ""
+                    });
+                }
+            );
+
+            $("p").addClass("parag"); // add class to a specific tag
+            $("h1").removeClass("parag"); // remove class to a specific tag
+            //alert($("h1").hasClass("parag")); tests if a element has a specific class or not
+            $("#alternate").click(function() {
+                $("h2").toggleClass("parag"); // add and remove class
+                alert($("h2").hasClass("parag"));
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

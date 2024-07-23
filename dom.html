@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Jquery DOM manipulation</title>
+    <style>
+        /*img {
+            position: absolute;
+        }*/
+    </style>
+</head>
+
+<body>
+
+    <center>
+        <h1>Learn complete jQuery: jQuery DOM manipulation</h1>
+    </center>
+
+    <p class="para" id="para">This is a paragraph</p>
+    <br>
+
+    <div class="name">Abdelmalek</div>
+
+    <br>
+
+    <center class="center"></center>
+
+    <img src="jquery.png">
+
+    <input type="text" name="nom" class="nom" id="nom" value="" autocomplete="off">
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            // Managing elements
+            $("p").before("<div>Div before paragraph</div>"); // before(): add text before current element
+            $("p").after("<div>Div after paragraph</div>"); // after(): add text after current element
+            $(".name").append(" BENMEZIANE"); // append(): add text after current element
+            $(".name").prepend("Mr. "); // prepend(): add text before current element
+            //$("p").empty(); // empty() : delete the current element
+            //$(".name").remove(); // remove(): delete the current element
+            console.log($("img").width());
+            console.log($("img").height());
+            console.log($("img").offset());
+
+            // Managing attributes
+            console.log($("div").attr("class")); // name
+            console.log($("img").attr("src")); // jquery.png
+            console.log($("p").attr("class")); // para
+
+            $("div").attr("class", "after_before");
+
+            $("div").click(function() {
+                alert("class is: " + $(this).attr("class")); // name
+            });
+
+            $("div.name").attr("class", "test"); // changes "class" attribute from 'name' to 'test'
+
+            $("p").click(function() {
+                alert("id is: " + $(this).attr("id"));
+            });
+
+            $("img").hover(function() {
+                alert("src is: " + $(this).attr("src"));
+            });
+
+            // Managing properties
+            var style = $(".after_before").prop("style"); // Just the first element
+            style.color = "green";
+
+            $(".after_before").each(function() { // all the elements
+                $(this).prop("style").color = "green";
+            });
+
+            // Managing text
+            console.log($("p").text()); // Accessing to the text content using text()
+            $("p").text("This is a new text"); // Modifying the text content using text(".....")
+
+            // Managing html
+            console.log($("p").html()); // Accessing to the html content using html()
+            $("p").html("<b>This is a new text</b>"); // Modifying the html content using html(".....")
+
+            console.log($(".center").html());
+            $(".center").html("<h2>Heading h2</h2>");
+
+            // Managing values
+            console.log($("#nom").val()); // Accessing to the form attribute value using val()
+            $("#nom").val("Abdelmalek"); // Modifying the form attribute value using val()
+
+        });
+    </script>
+
+</body>
+
+</html>

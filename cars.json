@@ -1,0 +1,19 @@
+[{
+        "model": "Toyota Camry",
+        "color": "Red",
+        "registrationYear": 2018,
+        "serviceRevisionYear": 2023
+    },
+    {
+        "model": "Honda Accord",
+        "color": "Blue",
+        "registrationYear": 2019,
+        "serviceRevisionYear": 2024
+    },
+    {
+        "model": "Ford Focus",
+        "color": "Black",
+        "registrationYear": 2020,
+        "serviceRevisionYear": 2025
+    }
+]

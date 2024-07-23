@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cars>
+    <car>
+        <model>Toyota Camry</model>
+        <color>Red</color>
+        <registrationYear>2018</registrationYear>
+        <serviceRevisionYear>2023</serviceRevisionYear>
+    </car>
+    <car>
+        <model>Honda Accord</model>
+        <color>Blue</color>
+        <registrationYear>2019</registrationYear>
+        <serviceRevisionYear>2024</serviceRevisionYear>
+    </car>
+    <car>
+        <model>Ford Focus</model>
+        <color>Black</color>
+        <registrationYear>2020</registrationYear>
+        <serviceRevisionYear>2025</serviceRevisionYear>
+    </car>
+</cars>

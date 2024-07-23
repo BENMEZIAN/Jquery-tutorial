@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Jquery DOM manipulation - traversing -</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <center>
+        <h1>Learn complete jQuery: jQuery DOM manipulation - traversing -</h1>
+    </center>
+
+    <h1>Welcome to My Homepage</h1>
+
+    <p>This is a paragraph.</p>
+
+    <div style="border: 1px solid black;">
+        <p>A paragraph in a div.</p>
+        <p>Another paragraph in a div.</p>
+    </div>
+    <br>
+
+    <div style="border: 1px solid black;">
+        <p>A paragraph in another div.</p>
+        <p>Another paragraph in another div.</p>
+    </div>
+    <br>
+
+    <div style="border: 1px solid black;">
+        <p>A paragraph in another div.</p>
+        <p>Another paragraph in another div.</p>
+    </div>
+
+    <div class="paragraphs">
+        <p>My name is Donald (index 0).</p>
+        <p>Donald Duck (index 1).</p>
+        <p>I live in Duckburg (index 2).</p>
+        <p>My best friend is Mickey (index 3).</p>
+    </div>
+
+    <h1>Abdelmalek BENMEZIANE</h1>
+    <h2 class="intro">Master degree bioinformatics</h2>
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //alert($("div").first().text()); // The first() method returns the first element of the specified elements.
+            $("div").first().css("background-color", "yellow");
+            $("div").last().css("background-color", "greenyellow"); // The last() method returns the first element of the specified elements.
+            //The eq() method returns an element with a specific index number of the selected elements.
+            $(".paragraphs p").eq(0).css("background-color", "red");
+            $(".paragraphs p").eq(1).css("background-color", "green");
+            $(".paragraphs p").eq(2).css("background-color", "purple");
+            $(".paragraphs p").eq(3).css("background-color", "crimson");
+
+            $("h1").not(".intro").css("color", "gold");
+            $("h2").filter(".intro").css("color", "gold");
+
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Jquery DOM manipulation - traversing -</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 0 auto;
+            padding: 5px;
+            border-radius: 5px;
+            flex-wrap: wrap;
+        }
+        
+        .descendants * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <center>
+        <h1>Learn complete jQuery: jQuery DOM manipulation - traversing -</h1>
+    </center>
+
+    <div class="container">
+        <div class="descendants" style="width:500px;">div (current element)
+            <p>p (child)
+                <span>span (grandchild)</span>
+            </p>
+            <p>p (child)
+                <span>span (grandchild)</span>
+            </p>
+        </div>
+    </div>
+
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".descendants").children().css({ // children() traverses just one single level
+                "color": "purple",
+                "border": "2px solid purple"
+            });
+
+            $(".descendants").find("span").css({ // find() traverses all the way down to the last descendant.
+                "color": "red",
+            });
+
+            $(".descendants").find("*").css({ // find() traverses all the way down to the last descendant.
+                "color": "green"
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

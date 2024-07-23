@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Jquery DOM manipulation - traversing -</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: left;
+            gap: 10px;
+            margin: 0 auto;
+            padding: 5px;
+            border-radius: 5px;
+            flex-wrap: wrap;
+            border: 2px solid black;
+        }
+        
+        .siblings * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <center>
+        <h1>Learn complete jQuery: jQuery DOM manipulation - traversing -</h1>
+    </center>
+
+    <div class="container">
+        <div>div (parent)
+            <p>p</p>
+            <span>span</span>
+            <h2>h2</h2>
+            <h3>h3</h3>
+            <p>p</p>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("h2").siblings().css({ // method returns all sibling elements of the selected element.
+                "color": "red",
+                "border": "2px solid red"
+            });
+
+            $("h2").siblings("p").css({ // adding filter to our siblings() method
+                "color": "green",
+                "border": "2px solid green"
+            });
+
+            $("h2").next().css({ // method returns next of the selected element. (same for prev())
+                "color": "greenyellow",
+                "border": "2px solid greenyellow"
+            });
+
+            $("h2").nextAll().css({ // method returns all next of the selected element. (same for prevAll())
+                "color": "greenyellow",
+                "border": "2px solid greenyellow"
+            });
+
+            $("h2").nextUntil("p").css({ // method returns next until specified element of the selected element.
+                "color": "purple", // (same for prevUntil())
+                "border": "2px solid purple"
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Jquery</title>
+</head>
+
+<body>
+
+    <center>
+        <h1>Learn complete jQuery: Introduction, Download, CDN and Syntax</h1>
+    </center>
+
+    <input type="button" id="btn" value="Click me" name="">
+
+    <p class="para">This is paragrap1</p>
+    <p class="para" id="para2">This is paragrap2</p>
+    <p class="para">This is paragrap3</p>
+
+    <input type="text" name="">
+    <input type="button" name="">
+    <input type="button" name="">
+    <input type="button" name="">
+    <input type="button" name="">
+
+    <!--p>Using ":first-child/:last-child" selector with lists</p-->
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+
+    <!--p>Using ":first-child/:last-child" selector with lists</p-->
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>mohamed</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>amine</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>kader</td>
+        </tr>
+
+    </table>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // alert($("h1").text()); print message
+            // $("h1").css("color", "red"); -- change css color of attribute h1
+            $(".para").css("border", "1px solid red"); // selector by "class"
+            console.log($("#para2").text()); // selector by "id"
+            $("*").css("font-family", "Tahoma"); // "Universal" selector
+            $("input[type=text]").css("width", "300px"); // selector by attribute "type=text"
+            $("input[type=button]").css("background-color", "green"); // selector by attribute "type=button"
+            $("p:first").css("background-color", "yellow"); // selector by ":first/:last"
+            $("p:last").css("background-color", "yellow"); // selector by ":first/:last"
+            $("ul li:first-child").css("color", "red"); // selector by ":first-child/:last-child"
+            $("ul li:last-child").css("color", "green"); // selector by ":first-child/:last-child"
+            $("tr:odd").css("color", "yellow"); // selector by ":odd/:even"
+            $("tr:odd").css("background-color", "blue"); // selector by ":odd/:even"
+            $("tr:even").css("color", "silver"); // selector by ":odd/:even"
+            $("tr:even").css("background-color", "green"); // selector by ":odd/:even"
+            $(":button").width(100); // "inputType" selector
+            $(":button").height(50); // "inputType" selector
+
+            $("#btn").css("color", "black");
+            $("#btn").click(function() {
+                alert("You have clicked me");
+                $(this).val("Clicked button"); // "current element" selector
+                $(this).css("background-color", "purple");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
